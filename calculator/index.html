@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <style>
+        body {
+            margin: 50px;
+            background-color: black;
+        }
+
+        label {
+            display: inline-block;
+            width: 120px;
+            color: red;
+        }
+
+        button {
+            display: inline-block;
+            width: 280px;
+        }
+
+        div {
+            display: inline-block;
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            border-radius: 50px;
+            padding-left: 110px;
+            padding-top: 50px;
+        }
+
+        input {
+            text-align: right;
+        }
+
+        span {
+            width: 100px;
+            text-align: right;
+        }
+
+    </style>
+    <script>
+        function berechnen() {
+
+            var brutto = document.getElementById("brutto").value;
+            var netto = document.getElementById("netto").value;
+            var eurokurs = document.getElementById("eurokurs").value;
+
+            var a = brutto * eurokurs;
+            var b = netto * eurokurs;
+            var c = b * 0.12;
+            var d = a + c;
+            var e = d * 0.1596;
+            var f = e * eurokurs;
+            var g = a + c;
+            var h = g - f;
+
+            document.getElementById("bruttoCHF").value = Math.round(a);
+            document.getElementById("nettoCHF").value = Math.round(b);
+            document.getElementById("abzugCHF").value = Math.round(f);
+            document.getElementById("totalCHF").value = Math.round(h);
+
+
+        }
+
+
+        function setup() {
+            document.getElementById("berechne").addEventListener("click", berechnen);
+        }
+
+        window.addEventListener("load", setup);
+    </script>
+</head>
+<body>
+<div>
+
+    <label>Brutto €</label><input type="number" id="brutto"></br>
+    <label>Netto €</label><input type="number" id="netto"></br>
+    <label>Eurokurs</label><input type="number" id="eurokurs" value="1.08"></br>
+    <button id="berechne" type="button">Berechnen</button></br>
+
+    <h4>Berechnung</h4>
+
+    <label>Brutto CHF</label><input type="text" readonly="readonly" id="bruttoCHF"></br>
+    <label>Netto CHF</label><input type="text" readonly="readonly" id="nettoCHF"></br>
+    <label>Abzug CHF</label><input type="text" readonly="readonly" id="abzugCHF"></br>
+    <label>Total CHF</label><input type="text" readonly="readonly" id="totalCHF"></br>
+
+</div>
+</body>
+</html>
