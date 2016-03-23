@@ -10,7 +10,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <style>
         body {
-            margin: 50px;
+            margin: 5px;
             background-color: black;
         }
 
@@ -27,12 +27,12 @@
 
         div {
             display: inline-block;
-            width: 500px;
-            height: 500px;
+            width: 350px;
+            height: 370px;
             background-color: white;
             border-radius: 50px;
-            padding-left: 110px;
-            padding-top: 50px;
+            padding-left: 30px;
+            padding-top: 10px;
         }
 
         input {
@@ -42,6 +42,10 @@
         span {
             width: 100px;
             text-align: right;
+        }
+        h1 {
+            text-align: center;
+            width: 280px;
         }
 
     </style>
@@ -69,7 +73,6 @@
 
         }
 
-
         function setup() {
             document.getElementById("berechne").addEventListener("click", berechnen);
         }
@@ -79,7 +82,7 @@
 </head>
 <body>
 <div>
-
+    <h1>Calculator</h1>
     <label>Brutto €</label><input type="number" id="brutto"></br>
     <label>Netto €</label><input type="number" id="netto"></br>
     <label>Eurokurs</label><input type="number" id="eurokurs" value="1.08"></br>
