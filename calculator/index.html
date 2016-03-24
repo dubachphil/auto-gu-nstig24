@@ -30,7 +30,7 @@
         div {
             display: inline-block;
             width: 350px;
-            height: 450px;
+            height: 500px;
             background-color: white;
             border-radius: 50px;
             padding-left: 30px;
@@ -63,7 +63,7 @@
             var b = netto * eurokurs;
             var i = b * 0.12;
             var ia = i + a;
-            var c = a * 0.1596;
+            var c = ia * 0.1596;
             var r = ia - c;
 
             var verkauf = r * ((marge/100)+1);
@@ -91,7 +91,7 @@
     <label>Brutto €</label><input type="number" id="brutto"></br>
     <label>Netto €</label><input type="number" id="netto"></br>
     <label>Eurokurs</label><input type="number" id="eurokurs" value="1.08"></br>
-    <label>Marge %</label><input type="number" id="marge" value="30"></br>
+    <label>Marge %</label><input type="number" id="marge" value="18"></br>
     <button id="berechne" type="button">Berechnen</button></br>
 
     <h4>Berechnung</h4>
@@ -100,6 +100,7 @@
     <label>Netto CHF</label><input type="text" readonly="readonly" id="nettoCHF"></br>
     <label>Abzug CHF</label><input type="text" readonly="readonly" id="abzugCHF"></br>
     <label>Kosten CHF</label><input type="text" readonly="readonly" id="totalCHF"></br>
+    <hr>
     <label>Verkauf CHF</label><input type="text" readonly="readonly" id="verkaufCHF"></br>
     <label>Gewinn CHF</label><input type="text" readonly="readonly" id="gewinnCHF"></br>
 
