@@ -30,7 +30,7 @@
         div {
             display: inline-block;
             width: 350px;
-            height: 370px;
+            height: 450px;
             background-color: white;
             border-radius: 50px;
             padding-left: 30px;
@@ -57,21 +57,24 @@
             var brutto = document.getElementById("brutto").value;
             var netto = document.getElementById("netto").value;
             var eurokurs = document.getElementById("eurokurs").value;
+            var marge = document.getElementById("marge").value;
 
             var a = brutto * eurokurs;
             var b = netto * eurokurs;
-            var c = b * 0.12;
-            var d = a + c;
-            var e = d * 0.1596;
-            var f = e * eurokurs;
-            var g = a + c;
-            var h = g - f;
+            var i = b * 0.12;
+            var ia = i + a;
+            var c = a * 0.1596;
+            var r = ia - c;
+
+            var verkauf = r * ((marge/100)+1);
+            var gewinn = verkauf - r;
 
             document.getElementById("bruttoCHF").value = Math.round(a);
             document.getElementById("nettoCHF").value = Math.round(b);
-            document.getElementById("abzugCHF").value = Math.round(f);
-            document.getElementById("totalCHF").value = Math.round(h);
-
+            document.getElementById("abzugCHF").value = Math.round(c);
+            document.getElementById("totalCHF").value = Math.round(r);
+            document.getElementById("verkaufCHF").value = Math.round(verkauf);
+            document.getElementById("gewinnCHF").value = Math.round(gewinn);
 
         }
 
@@ -88,6 +91,7 @@
     <label>Brutto €</label><input type="number" id="brutto"></br>
     <label>Netto €</label><input type="number" id="netto"></br>
     <label>Eurokurs</label><input type="number" id="eurokurs" value="1.08"></br>
+    <label>Marge %</label><input type="number" id="marge" value="30"></br>
     <button id="berechne" type="button">Berechnen</button></br>
 
     <h4>Berechnung</h4>
@@ -95,7 +99,9 @@
     <label>Brutto CHF</label><input type="text" readonly="readonly" id="bruttoCHF"></br>
     <label>Netto CHF</label><input type="text" readonly="readonly" id="nettoCHF"></br>
     <label>Abzug CHF</label><input type="text" readonly="readonly" id="abzugCHF"></br>
-    <label>Total CHF</label><input type="text" readonly="readonly" id="totalCHF"></br>
+    <label>Kosten CHF</label><input type="text" readonly="readonly" id="totalCHF"></br>
+    <label>Verkauf CHF</label><input type="text" readonly="readonly" id="verkaufCHF"></br>
+    <label>Gewinn CHF</label><input type="text" readonly="readonly" id="gewinnCHF"></br>
 
 </div>
 </body>
