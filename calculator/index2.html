@@ -10,6 +10,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="icon" href="http://findicons.com/files/icons/1012/racing_cars/128/dodge.png" />
     <link rel="apple-touch-icon-precomposed" href="http://findicons.com/files/icons/1012/racing_cars/128/dodge.png" />
+
     <style>
         body {
             margin: 5px;
@@ -82,7 +83,15 @@
             document.getElementById("berechne").addEventListener("click", berechnen);
         }
 
+
+
         window.addEventListener("load", setup);
+    </script>
+
+    <script type="text/javascript">
+        function updateTextInput(val) {
+            document.getElementById('textInput').value=val;
+        }
     </script>
 
     <script>
@@ -102,7 +111,9 @@
     <label>Brutto €</label><input type="number" id="brutto"></br>
     <label>Netto €</label><input type="number" id="netto"></br>
     <label>Eurokurs</label><input type="number" id="eurokurs" value="1.08"></br>
-    <label>Marge %</label><input type="number" id="marge" value="18"></br>
+    <label>Marge %</label><input type="range" id="marge" value="18" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value);">
+    <input type="text" id="textInput" value="">
+
     <button id="berechne" type="button">Berechnen</button></br>
 
     <h4>Berechnung</h4>

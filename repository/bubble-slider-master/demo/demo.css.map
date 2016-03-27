@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "sources": [
+    "demo.css"
+  ],
+  "names": [],
+  "mappings": "AAAA,UAEE,iCAAqC,AACrC,eAAgB,AAChB,WAAY,AACZ,eAAiB,CAClB,AACD,MACE,cAAe,AACf,eAAgB,AAChB,gBAAiB,AACjB,eAAiB,CAClB,AACD,GACE,gBAAiB,AACjB,cAAgB,CAEjB,AACD,SAFE,iBAAmB,CAOpB,AALD,MACE,cAAe,AACf,gBAAiB,AACjB,cAAgB,CAEjB",
+  "file": "demo.css",
+  "sourcesContent": [
+    "html,\nbody {\n  font-family: 'Open Sans', sans-serif;\n  font-size: 16px;\n  color: #333;\n  background: #fff;\n}\n.wrap {\n  margin: 0 auto;\n  padding: 0 50px;\n  min-width: 480px;\n  max-width: 960px;\n}\nh1 {\n  font-weight: 400;\n  font-size: 35px;\n  text-align: center;\n}\nlabel {\n  display: block;\n  font-weight: 300;\n  font-size: 30px;\n  text-align: center;\n}\n"
+  ],
+  "sourceRoot": "/source/"
+}

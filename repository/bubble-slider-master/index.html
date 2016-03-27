@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bubble Slider</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+  <link href="demo/demo.css" rel="stylesheet">
+  <link href="build/bubble-slider.css" rel="stylesheet">
+  <script src="build/jquery.bubble-slider.js"></script>
+  <script>
+    $.fn.bubbleSlider.defaults = {
+      trackColor: '#E7E7E7'
+    };
+
+  </script>
+  <script>
+    function calc() {
+      var wert = document.getElementById("schieberegler").value;
+      document.getElementById("ausgabe").value = wert;
+    }
+
+    function setup() {
+      document.getElementById("calculate").addEventListener("click", calc);
+    }
+
+    window.addEventListener("load", setup);
+
+  </script>
+
+</head>
+<body>
+<div style="display:inline-block; width: 400px;">
+  <input id="schieberegler"
+         name="schieberegler"
+         placeholder="0 - 50"
+         type="number"
+         value="18"
+         data-toggle-bubble="true"
+         data-thumb-color="#12C7AC"
+         class="bubble-slider"/>
+</div></br>
+<button type="button" id="calculate">Calculate</button></br>
+<input type="text" id="ausgabe">
+
+</body>
+</html>
