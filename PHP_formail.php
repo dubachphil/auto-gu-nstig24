@@ -1,5 +1,4 @@
 <?
-
 // PHP Variablen
 // Kontaktdaten
 $von = $_POST['name'];
@@ -25,103 +24,48 @@ $webmas="info@auto-guenstig24.ch";
 $site="www.auto-guenstig24.ch";
 
 //hier die nachricht an sie selbst eingeben
-$message="hallo,\n\n";
-$message.="ein besucher von ihrer website hat ihr kontakt-formular benutzt\n";
-$message.="sein name ist $von und seine email adresse ist $email\n";
-$message.="die postadresse und die tel/faxnummer: $postadresse, $telfaxnummer\n";
-$message.="der betreff: $betreff\n";
-$message.="und die nachricht an sie:\n\n";
-$message.="$nachricht";
+$message="Anfrage \n\n";
+$message="Kontaktdaten \n";
+$message.="Name: $von \n";
+$message.="Geboren: $born \n";
+$message.="Mail: $email \n";
+$message.="Telefon: $telefon \n\n";
+$message.="Autodaten \n";
+$message.="Marke: $marke \n";
+$message.="Typ: $typ \n";
+$message.="Jahrgang: $jahrgang \n";
+$message.="Farbe: $farbe \n";
+$message.="Max.Km: $km \n";
+$message.="Max.Preis: $preis \n";
+$message.="Zusatz: $zusatz \n";
 
 //STOP bis hier konfigurieren --------------------------------------------------------------
 $header="From: $von<$email>\nReply-To: $email\nX-Mailer: PHP/" . phpversion();
-$headers="From: $site<$webmas>\nReply-To: $email\nX-Mailer: PHP/" . phpversion();
-//if($von!="" && $email!="" && $betreff!="" && $nachricht!="" || $von!="Vor- und Nachname" && $email!="Bitte geben Sie ihre wahre E-mail Adresse an!" && $betreff!="Bitte einen Betreff angeben" && $nachricht!="Ihre Nachricht an Uns"){
+$headers="From: $site<$webmas>\nReply-To: $webmas\nX-Mailer: PHP/" . phpversion();
 mail($webmas, "Anfrage", $message, $header);
 $datei = fopen( "PHP_formail.dat", "r" );
 $bestatigung = fread( $datei, filesize( "PHP_formail.dat" ) );
 fclose( $datei );
-mail( $email, "Danke f�r Ihre E-Mail", $bestatigung, $headers);
-//}
+mail( $email, "Bestätigung Anfrage - auto-günstig.ch", $bestatigung, $headers);
 ?>
-<html>
-<HEAD>
-   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
-   <meta http-equiv="refresh" content="3;URL=http://www.auto-guenstig24.ch">
-   <title>Danke</title>
-</HEAD>
-<BODY TEXT="#000000" BGCOLOR="#FBFBFB">
-<TABLE BORDER=0 WIDTH="100%" >
-<TR>
-<TD>x
-<CENTER>&nbsp;</CENTER>
-</TD>
-</TR>
-
-<TR>
-<TD>
-<CENTER>
-      </CENTER>
-</TD>
-</TR>
-
-<TR>
-<TD>&nbsp;</TD>
-</TR>
-</TABLE>
-
-<CENTER>&nbsp;</CENTER>
-
-<TABLE BORDER=0 WIDTH="100%" >
-<TR>
-<TD>
-<CENTER>
-        <B><FONT FACE="Verdana"><FONT COLOR="#000000">Vielen Dank f&uuml;r Ihre
-        E-Mail!</FONT></FONT></B>
-      </CENTER>
-</TD>
-</TR>
-</TABLE>
-
-<CENTER>&nbsp;</CENTER>
-
-<TABLE BORDER=0 WIDTH="100%" >
-  <TR>
-    <TD>
-      <CENTER>
-        <B><FONT FACE="Verdana"><FONT COLOR="#000000"><FONT SIZE=-1>Wir haben
-        Ihre Nachricht erhalten und werden diese sofort bearbeiten.</FONT></FONT></FONT></B>
-      </CENTER>
-      </TD>
-  </TR>
-  <TR>
-    <TD>
-      <div align="center"><b><font face="Verdana"><font color="#000000"><font size=-1>Sie
-        erhalten automatisch eine E-Mail als Best&auml;tigung Ihrer Nachricht.</font></font></font></b></div>
-    </TD>
-  </TR>
-  <TR>
-    <TD>&nbsp;</TD>
-  </TR>
-  <TR>
-    <TD>
-      <div align="center"><b><font face="Verdana"><font color="#000000"><font size=-1>- 
-        auto-guenstig24.ch -</font></font></font></b> </div>
-    </TD>
-  </TR>
-</TABLE>
-
-<CENTER>&nbsp;</CENTER>
-
-<TABLE BORDER=0 WIDTH="100%" >
-<TR>
-<TD>
-<CENTER>
-      </CENTER>
-</TD>
-</TR>
-</TABLE>
-
-<CENTER>&nbsp;</CENTER>
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="refresh" content="6;URL=http://www.auto-guenstig24.ch">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <title>Vielen Dank</title>
+</head>
+<body>
+<div class="container">
+    <div style="height: 50px"></div>
+    <div class="alert alert-success" role="alert">
+        <h1 class="text-center">Herzlichen Dank für Ihre Anfrage!</h1>
+        <p class="text-center">Wir haben Ihre Anfrage erhalten und werden diese umgehend bearbeiten.</p>
+        <p class="text-center">Sie erhalten automatisch eine E-Mail als Bestätigung Ihrer Anfrage.</p>
+        <br>
+        <p class="text-center">Das Team von auto-günstig24.ch</p>
+    </div>
+</div>
 </body>
 </html>
