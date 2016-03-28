@@ -1,5 +1,5 @@
 body {
-    background-color: ivory;
+    background-color: white;
 }
 
 .navbar-brand {
@@ -25,12 +25,8 @@ body {
     padding: 15px;
 }
 
-#content-logo {
-    max-width: 700px;
+img#content-logo {
     width: 100%;
-    display: inline-block;
-    border-radius: 30px;
-    border: 5px solid red;
 }
 
 #motto {
@@ -39,4 +35,19 @@ body {
 
 .container#content {
     text-align: center;
+}
+
+div#willkommen {
+    max-width: 700px;
+}
+div#header {
+
+}
+
+form#anfrage label {
+    width: 120px;
+}
+
+form#anfrage input{
+    width: 300px;
 }
