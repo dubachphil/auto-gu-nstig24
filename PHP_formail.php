@@ -36,7 +36,6 @@ $message.="Typ: $typ \n";
 $message.="Jahrgang: $jahrgang \n";
 $message.="Farbe: $farbe \n";
 $message.="Max.Km: $km \n";
-$message.="Max.Preis: $preis \n";
 $message.="Zusatz: $zusatz \n";
 
 //STOP bis hier konfigurieren --------------------------------------------------------------
@@ -46,7 +45,7 @@ mail($webmas, "Anfrage", $message, $header);
 $datei = fopen( "PHP_formail.dat", "r" );
 $bestatigung = fread( $datei, filesize( "PHP_formail.dat" ) );
 fclose( $datei );
-mail( $email, "Bestätigung Anfrage - auto-günstig.ch", $bestatigung, $headers);
+mail( $email, "Bestaetigung Anfrage - auto-guenstig.ch", $bestatigung, $headers);
 ?>
 <!DOCTYPE html>
 <head>
